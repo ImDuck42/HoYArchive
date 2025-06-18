@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoYarchive</title>
+    <meta name="description" content="An archive of game characters, featuring detailed information, models, and community uploads. Explore, filter, and learn more about each character.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="website/styles.css">
+    <link rel="icon" href="website/icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>HoYarchive</h1>
+        </header>
+
+        <section class="controls" aria-labelledby="controls-heading">
+            <h2 id="controls-heading" class="visually-hidden">Character Filters and Search Controls</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search characters by name...">
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-dropdown" id="pathFilter">
+                    <button class="filter-button" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="filter-button-label">Path</span> <span class="arrow" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="filter-dropdown-content" role="listbox">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="filter-dropdown" id="elementFilter">
+                    <button class="filter-button" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="filter-button-label">Element</span> <span class="arrow" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="filter-dropdown-content" role="listbox">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <button class="clear-filters" id="clearFilters">Clear All Filters</button>
+            </div>
+        </section>
+
+        <main id="main-content">
+            <div class="character-grid" id="characterGrid">
+                <!-- Characters will be populated by JavaScript -->
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <h2>No characters found</h2>
+                <p>Try adjusting your search or filter criteria.</p>
+            </div>
+        </main>
+    </div>
+
+    <div class="loading" id="loading" role="status" aria-live="polite" aria-label="Loading page content">
+        <div class="loading-spinner"></div>
+        <p>Loading characters...</p>
+    </div>
+
+    <div id="characterDetailOverlay" class="character-detail-overlay" role="dialog" aria-modal="true" aria-hidden="true"
+        hidden>
+        <!-- aria-labelledby will be dynamically set by JavaScript -->
+        <button id="overlayCloseBtn" class="overlay-close-btn" aria-label="Close character details">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+            </svg>
+        </button>
+        <div id="overlayContentWrapper" class="overlay-content-wrapper">
+            <div id="overlayContent" class="overlay-content-scrollable" tabindex="-1">
+                <!-- Character details will be injected here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+    <script src="website/app.js" defer></script>
+</body>
+
+</html>

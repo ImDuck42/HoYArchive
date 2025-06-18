@@ -1,0 +1,62 @@
+{
+  "dataInfo": {
+    "about": "This is a template for character data. Html tags are usable. Wink Wink",
+    "example": "<p>Model dumped using the <a href=\"https://example.com/model-info\" target=\"_blank\" style=\"color: #8c5eff; text-decoration: underline;\">Game Model Importer</a></p>"
+  },
+  "characters": [
+    {
+      "id": "x",
+      "name": "X (Template)",
+      "rarity": 10,
+      "element": "X",
+      "path": "Y",
+      "description": "XxX.",
+      "modelInfo": "Xx.",
+      "inclusions": [
+        { "id": 1, "name": "A", "description": "X." },
+        { "id": 2, "name": "B", "description": "X." },
+        { "id": 3, "name": "C", "description": "X." },
+        { "id": 4, "name": "D", "description": "X." }
+      ],
+      "assets": {
+        "splashImage": "characters/x/splash.png",
+        "modelDownload": "characters/x/model.zip"
+      },
+      "meta": { "uploader": "X", "uploadDate": "XXXX-XX-XX" }
+    },
+
+    {
+      "id": "skirk",
+      "name": "Skirk",
+      "rarity": 5,
+      "element": "Cryo",
+      "path": "Sword",
+      "description": "Skirk is Tartaglia's teacher and has a background with the Abyss.",
+      "modelInfo": "This model got dumped using 3DMigoto GIMI, and to load it into blender the <a href=\"https://github.com/hazrategolabi/gimi_tools\" target=\"_blank\" style=\"color: #8c5eff; text-decoration: underline;\">GIMI Tools AddOn</a> is required.<br> I hope the Model contains all the assets you need, if not feel free to contact me.",
+      "inclusions": [
+        { "id": "1fbe8217", "name": "Skirk's Body", "description": " " },
+        { "id": "dafe18b6", "name": "The Body's blue accents", "description": " " },
+        { "id": "b7b106d4", "name": "Face area around the eyes", "description": " " },
+        { "id": "a831e5b5", "name": "Skirk's eyes", "description": " " },
+        { "id": "37cb87d5", "name": "The mouth area", "description": " " },
+        { "id": "74811ddf", "name": "The front part of her hair", "description": " " },
+        { "id": "056da8f3", "name": "Skirk's skirt", "description": " " },
+        { "id": "59a09774", "name": "Skirk's sword", "description": " " },
+        {
+          "id": "skirk-model-toggle",
+          "name": "<span role=\"button\" tabindex=\"0\" aria-expanded=\"false\" aria-controls=\"skirk-screenshots-container-skirk-model-toggle\" style=\"cursor: pointer; color: #8c5eff; text-decoration: underline;\" onclick=\"const containerId = this.getAttribute('aria-controls'); const imgContainer = document.getElementById(containerId); if(imgContainer) { const isHidden = imgContainer.style.display === 'none' || imgContainer.style.display === ''; imgContainer.style.display = isHidden ? 'block' : 'none'; this.innerHTML = isHidden ? 'Model Screenshots ▲' : 'Model Screenshots ▼'; this.setAttribute('aria-expanded', isHidden ? 'true' : 'false'); imgContainer.setAttribute('aria-hidden', isHidden ? 'false' : 'true'); } event.preventDefault(); event.stopPropagation();\">Model Screenshots ▼</span>",
+          "description": "Click to expand/collapse <div id=\"skirk-screenshots-container-skirk-model-toggle\" style=\"display: none; margin-top: 10px;\" aria-hidden=\"true\"><img src=\"characters/skirk/modelPreview.png\" alt=\"Skirk Model Preview\" style=\"width: auto; height: 150px; border-radius: 8px; box-shadow: 0 0 10px rgba(140, 94, 255, 0.5); margin-right: 10px; margin-bottom:10px;\" loading=\"lazy\"><img src=\"characters/skirk/model.png\" alt=\"Skirk Model\" style=\"width: auto; height: 150px; border-radius: 8px; box-shadow: 0 0 10px rgba(140, 94, 255, 0.5); margin-right: 10px; margin-bottom:10px;\" loading=\"lazy\"><img src=\"characters/skirk/face.png\" alt=\"Skirk Face\" style=\"width: auto; height: 150px; border-radius: 8px; box-shadow: 0 0 10px rgba(140, 94, 255, 0.5); margin-right: 10px; margin-bottom:10px;\" loading=\"lazy\"><img src=\"characters/skirk/szene.png\" alt=\"Skirk Scene\" style=\"width: auto; height: 150px; border-radius: 8px; box-shadow: 0 0 10px rgba(140, 94, 255, 0.5); margin-right: 10px; margin-bottom:10px;\" loading=\"lazy\"><img src=\"characters/skirk/sword.png\" alt=\"Skirk Sword\" style=\"width: auto; height: 150px; border-radius: 8px; box-shadow: 0 0 10px rgba(140, 94, 255, 0.5); margin-bottom:10px;\" loading=\"lazy\"></div>"
+        }
+      ],
+      "assets": {
+        "splashImage": "characters/skirk/splash.png",
+        "modelDownload": "characters/skirk/model.zip"
+      },
+      "meta": {
+        "uploader": "<a href=\"https://discord.com/users/977936340186443826\" target=\"_blank\" style=\"color: var(--text-secondary); text-decoration: underline;\">@hu7ao</a>",
+        "uploadDate": "2025-06-18"
+      }
+    }
+
+  ]
+}
