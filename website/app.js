@@ -6,8 +6,11 @@ let currentFilters = {
     path: '',
     element: ''
 };
-let activeCharacterCardElement = null; // To store the card that opened the overlay
-let focusableElementsInOverlay = []; // For focus trapping
+let activeCharacterCardElement = null;
+let focusableElementsInOverlay = [];
+let baseUrl = window.location.hostname.includes('github.io') 
+    ? '/HoYArchive/'  // GitHub Pages base URL
+    : '/';            // Local development base URL
 
 // --- CONSTANTS ---
 const KEY_ESCAPE = 'Escape';
@@ -42,6 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         populateDynamicDropdowns();
         initializeEventListeners();
         renderCharacters();
+        handleUrlCharacter();
     } catch (error) {
         console.error('Failed to initialize application:', error);
         showError(error.message || 'Failed to load character data. Please try refreshing the page.');
@@ -49,6 +53,25 @@ document.addEventListener('DOMContentLoaded', async () => {
         hideLoading();
     }
 });
+
+// Add these new functions after initialization section
+function handleUrlCharacter() {
+    const path = window.location.pathname;
+    const characterId = path.substring(path.lastIndexOf('/') + 1);
+    
+    if (characterId && characterId !== 'HoYArchive') {
+        const character = characters.find(c => c.id === characterId);
+        if (character) {
+            // Find the card element for this character
+            const cardElement = document.querySelector(`.character-card[data-character-id="${characterId}"]`);
+            showCharacterDetailOverlay(characterId, cardElement);
+        } else {
+            // Remove invalid character ID from URL
+            const newPath = path.substring(0, path.lastIndexOf('/'));
+            window.history.replaceState({}, '', baseUrl);
+        }
+    }
+}
 
 // --- DYNAMIC DROPDOWN POPULATION ---
 function populateDynamicDropdowns() {
@@ -388,6 +411,9 @@ function showCharacterDetailOverlay(characterId, cardElement) {
         return;
     }
 
+    // Update URL when showing overlay
+    window.history.replaceState({}, '', `${baseUrl}${characterId}`);
+    
     activeCharacterCardElement = cardElement;
 
     const characterIdForOverlay = character.id || 'unknown-character';
@@ -439,6 +465,9 @@ function closeCharacterDetailOverlay() {
     characterDetailOverlay.classList.remove('active');
     characterDetailOverlay.setAttribute('aria-hidden', 'true');
 
+    // Update URL when closing overlay
+    window.history.replaceState({}, '', baseUrl);
+    
     characterDetailOverlay.addEventListener('transitionend', performOverlayCloseActions, { once: true });
     setTimeout(() => { // Fallback
         if (!characterDetailOverlay.hidden) {
