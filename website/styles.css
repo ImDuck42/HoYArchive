@@ -710,7 +710,7 @@ body {
 }
 .zip-contents-list {
     padding-left: 0;
-    max-height: 25vh;
+    max-height: 20vh;
     overflow-y: auto;
     background-color: rgba(var(--success-color-rgb), 0.05);
     border: 1px solid rgba(var(--success-color-rgb), 0.2);

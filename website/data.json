@@ -56,6 +56,30 @@
         "uploader": "<a href=\"https://discord.com/users/977936340186443826\" target=\"_blank\" style=\"color: var(--text-secondary); text-decoration: underline;\">@hu7ao</a>",
         "uploadDate": "2025-06-18"
       }
+    },
+
+    {
+      "id": "citlali",
+      "name": "Citlali",
+      "rarity": 5,
+      "element": "Cryo",
+      "path": "Catalist",
+      "description": "Grumpy old ass Granny and a bookworm too.",
+      "modelInfo": "This model got dumped using 3DMigoto GIMI, and to load it into blender the <a href=\"https://github.com/hazrategolabi/gimi_tools\" target=\"_blank\" style=\"color: #8c5eff; text-decoration: underline;\">GIMI Tools AddOn</a> is required.<br> I hope the Model contains all the assets you need, if not feel free to contact me. (Copy/Paste of Skirk desc)",
+      "inclusions": [
+        { "id": "f81f893c", "name": "Citlalis's body", "description": " " },
+        { "id": "760ea6d6", "name": "Big white pillow", "description": "I wish that was me" },
+        { "id": "375658e4", "name": "Area around grannys mouth", "description": " " },
+        { "id": "31a94d8f", "name": "Area around the eyes", "description": " " }
+      ],
+      "assets": {
+        "splashImage": "characters/citlali/splash.png",
+        "modelDownload": "characters/citlali/model.zip"
+      },
+      "meta": {
+        "uploader": "<a href=\"https://discord.com/users/977936340186443826\" target=\"_blank\" style=\"color: var(--text-secondary); text-decoration: underline;\">@hu7ao</a>",
+        "uploadDate": "2025-06-22"
+      }
     }
 
   ]
